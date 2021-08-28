@@ -1,0 +1,43 @@
+<!--Jeff Wiederkehr
+ CSC 337
+ Assignment 10 8 Events-->
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #arrayResults p{
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>3 Add to Array</title>
+</head>
+<body>
+<div class = "outline">
+    <p id = "userEntry">Enter a name: <input type="text" id ="inputField"><br>
+    </p>
+    <p>The array of names:</p>
+    <div id = "arrayResults"></div>
+</div>
+</body>
+<script>
+
+    const arrUpdate = document.querySelector("#arrayResults");
+    const inputField = document.querySelector("#inputField");
+    let resultArr = [];
+
+    function addName(resultArr,inputField,arrUpdate) {
+        resultArr.push(inputField.value);
+        arrUpdate.innerHTML += `<p>${resultArr.length}: ${resultArr[resultArr.length-1]} </p>`;
+        inputField.value = "";
+    }
+    inputField.addEventListener("change",function (){
+       addName(resultArr,inputField,arrUpdate)
+    });
+
+
+
+</script>
+</html>

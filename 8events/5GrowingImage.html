@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5 Growing Image</title>
+</head>
+<body>
+<img id="imgEvent" src="example.png" alt="example image" width="60px" height="60px">
+
+</body>
+<script>
+    const imgEvent = document.querySelector("#imgEvent");
+
+    function incrementImg(imgEvent) {
+        let curWidth = imgEvent.width;
+        let curHeight = imgEvent.height;
+        curHeight+=25;
+        curWidth+=50;
+        imgEvent.height = curHeight;
+        imgEvent.width = curWidth;
+    }
+
+    imgEvent.addEventListener("click",function (){
+        incrementImg(imgEvent);
+    });
+
+</script>
+</html>

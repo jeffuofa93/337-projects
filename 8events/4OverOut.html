@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Over Out</title>
+</head>
+<body>
+<div class = "outline">
+    <p id ="hoverEvent">Hover over Me</p>
+    <div id = "result"></div>
+</div>
+</body>
+<script>
+    let sizeArr = [0];
+    const eventTrigger = document.querySelector("#hoverEvent");
+    const result = document.querySelector("#result");
+
+    function updateResult (result,sizeArr,flag) {
+        sizeArr[0]++;
+        if (flag) {
+            result.innerHTML = `<p>Entered ${sizeArr[0]} events</p>`;
+        }  else {
+            result.innerHTML = `<p>Exited ${sizeArr[0]} events</p>`;
+        }
+
+    }
+    eventTrigger.addEventListener("mouseenter",function() {
+        updateResult(result,sizeArr,true);
+    });
+    eventTrigger.addEventListener("mouseleave",function() {
+        updateResult(result,sizeArr,false);
+    });
+</script>
+</html>

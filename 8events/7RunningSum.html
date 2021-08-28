@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7 Running Sum</title>
+</head>
+<body>
+<div>Enter a number: <input type="text" id="inputField"></div><br>
+<div id="result"></div>
+</body>
+<script>
+    let resultArr = [];
+    const eventTrigger = document.querySelector("#inputField");
+    const result = document.querySelector("#result");
+    result.innerHTML = `sum of [] = ${0}`;
+
+
+    function sumArray (resultArr) {
+        return resultArr.reduce((total,curValue) => total + curValue).toString();
+    }
+
+    function updateResult (resultArr,eventTrigger,result) {
+       resultArr.push(parseInt(eventTrigger.value));
+       result.innerHTML = `sum of ${resultArr.toString()} = ${sumArray(resultArr)}`;
+       eventTrigger.value= "";
+    }
+
+    eventTrigger.addEventListener("change", function (){
+        updateResult(resultArr,eventTrigger,result)
+    });
+</script>
+</html>

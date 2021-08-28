@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<style>
+#resultDisplay p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+}
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1 Calculator</title>
+</head>
+<body>
+<h3>Calculator</h3>
+<div id = "outline">
+    <p class = "x_block">
+    x <input type="text" id ="x"><br>
+    </p>
+    <p class="y_block">
+    y <input type="text" id ="y">
+    </p>
+    <p>
+        <button id="result">Show Results</button>
+    </p>
+    <div id ="resultDisplay">
+    </div>
+</div>
+</body>
+<script>
+const x = document.querySelector("#x");
+const y = document.querySelector("#y");
+const resultDisplay = document.querySelector("#resultDisplay")
+const result = document.querySelector("#result");
+function displayResult(x,y,resultDisplay) {
+    x = parseFloat(x.value);
+    y = parseFloat(y.value);
+    resultDisplay.innerHTML = `<p>${x} + ${y} = ${x + y}</p>`;
+    resultDisplay.innerHTML += `<p>${x} - ${y} = ${x - y}</p>`;
+    resultDisplay.innerHTML += `<p>${x} * ${y} = ${x * y}</p>`;
+    resultDisplay.innerHTML += `<p>${x} / ${y} = ${x / y}</p>`;
+    resultDisplay.innerHTML += `<p>${x} % ${y} = ${x % y}</p>`;
+}
+
+result.addEventListener("click",function () {
+  displayResult(x,y,resultDisplay)
+});
+</script>
+</html>

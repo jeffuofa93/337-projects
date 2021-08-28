@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #textToInc {
+        margin-top: 15px;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>6 Pixel Increase</title>
+</head>
+<body>
+<button id="buttonEvent">Increment by 1px</button>
+<div id="textToInc"> Increase my point size by 1px each click</div>
+
+
+</body>
+<script>
+    const buttonEvent = document.querySelector("#buttonEvent");
+    const text = document.querySelector("#textToInc");
+    text.style.fontSize = "16px";
+    let startSize = [16];
+
+    function incText (text,startSize) {
+        startSize[0]++;
+        text.style.fontSize = `${startSize[0]}px`;
+    }
+
+    buttonEvent.addEventListener("click",function (){
+        incText(text,startSize)
+    });
+
+</script>
+</html>

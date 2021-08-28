@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2 Change Styles</title>
+</head>
+<body>
+<h3 id="eventClicker">Click this text</h3>
+<hr>
+<div id = "changeStyle">Click "Click this text" above to change this div in several ways</div>
+</body>
+
+<script>
+    const eventClicker = document.querySelector("#eventClicker");
+    const changeStyle = document.querySelector("#changeStyle");
+
+    function updateStyle (changeStyle) {
+        changeStyle.innerHTML = "Change innerHtml, font 24 px, border 5px, width 300px, padding 50px, background " +
+            "lightGray";
+        changeStyle.style.backgroundColor = "lightGrey";
+        changeStyle.style.fontSize = "24px";
+        changeStyle.style.borderWidth = "5px";
+        changeStyle.style.border = "thick solid red";
+        changeStyle.style.width = "300px";
+        changeStyle.style.color = "green";
+        changeStyle.style.padding = "50px";
+        changeStyle.style.textAlign = "center";
+    }
+    eventClicker.addEventListener("click",function () {
+        updateStyle(changeStyle);
+    });
+</script>
+</html>

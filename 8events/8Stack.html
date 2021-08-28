@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8 Stack</title>
+</head>
+<body>
+<div>Push <input type="text" id="inputField"> <button id="pop">Pop</button></div><br>
+<ul id="resultList">
+</ul>
+</body>
+<script>
+    let stack = [];
+    const inputField = document.querySelector("#inputField");
+    const pop = document.querySelector("#pop");
+    const resultList = document.querySelector("#resultList");
+
+
+    function updateHTML (resultList,stack,inputField,flag) {
+        resultList.innerHTML = "";
+        if (flag) {
+            stack.push(inputField.value);
+            inputField.value = "";
+        } else {
+            stack.pop();
+        }
+        for (let i = stack.length-1; i>=0; i--) {
+            resultList.innerHTML += `<li>${stack[i]}</li>`;
+        }
+    }
+
+    inputField.addEventListener("change",function (){
+        updateHTML(resultList,stack,inputField,true)
+    });
+
+    pop.addEventListener("click",function (){
+        updateHTML(resultList,stack,inputField,false);
+    });
+
+
+
+
+</script>
+</html>
